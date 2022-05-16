@@ -18,14 +18,12 @@ input[name="radio_item"] {
 }
 
 .container {
-    height: 100%;
-    width: 100%;
-    padding: 5%;
+    width: 100vh;
     overflow: hidden;
     border-radius: 1%;
     display: flex;
     flex-direction: column;
-    box-shadow: 0 0 1em 0.4em rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 1em 0.5em rgba(0, 0, 0, 0.17);
 }
 
 .slides {
@@ -38,13 +36,21 @@ input[name="radio_item"] {
     width: 25%;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
     transition: all .6s ease;
+}
+
+.slide img {
+    width: 70%;
 }
 
 .slide_block {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: baseline;
+    margin: 0 auto;
+    padding: 1vh 0;
+    margin-bottom: 5vh;
 }
 
 .titles {
@@ -63,17 +69,18 @@ input[name="radio_item"] {
     font-size: 1.8em;
     display: block;
     transition: all .6s ease;
+    padding-left: 1vw;
 }
 
 .navigation {
     display: flex;
-    padding: 0 3vh;
-    justify-content: space-between;
+    justify-content: center;
+    padding-right: 1vw;
 }
 
 .nav_item {
-    width: 4rem;
-    height: 4rem;
+    width: 3rem;
+    height: 3rem;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -133,4 +140,34 @@ input[name="radio_item"] {
 #radio3:checked~.slide_block .navigation .nav_item .span3,
 #radio4:checked~.slide_block .navigation .nav_item .span4 {
     background-color: rgb(1, 52, 181);
+}
+
+@media (max-width: 768px) {
+    .slide img {
+        width: 90%;
+    }
+    .slide_block {
+        flex-direction: column;
+    }
+    .title-item {
+        font-weight: 300;
+        font-size: 1.2em;
+    }
+    .titles {
+        order: 2;
+        width: 100%;
+        padding-left: 15%;
+        margin-bottom: 5vh;
+    }
+    .navigation {
+        margin: 2vh auto;
+    }
+    .nav_item {
+        width: 2rem;
+        height: 2rem;
+    }
+    .nav_span {
+        width: 0.5rem;
+        height: 0.5rem;
+    }
 }
